@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import Icons from '../components/image layouts/icons';
 import Logo from '../assets/images/logo.png';
+import Buttons from '../components/ui/buttons';
 
 const Footer = () => {
   return (
-    <footer className='flex  h-[30%] w-full '>
+    <footer className='flex w-full h-[350px]'>
       <div className='w-[40%] flex-col gap-y-[20px] flex'>
         <h3 className='font-bold text-[22px]'>
           Farmart - Your Online Food and Grocery
@@ -24,7 +25,8 @@ const Footer = () => {
 
         <p>
           959 Homestead Street Eastlake NYC <br />
-          Support@farmart.com Mon - Fri: 07AM - 06PM
+          Support@farmart.com <br />
+          Mon - Fri: 07AM - 06PM
         </p>
       </div>
 
@@ -60,10 +62,23 @@ const Footer = () => {
             </p>
           </span>
         </div>
-        <div className='flex items-end justify-between'>
-          <div className='w-[300px] h-[30px] flex items-center justify-between px-[4px] border-2 border-[#ee00f3] rounded-lg'>
-            your email
-          </div>
+
+        <div className='flex items-end justify-between mt-[30px]'>
+          <form className='w-[300px] h-[30px] flex items-center justify-between px-[4px] border-2 border-[#ee00f3] rounded-lg'>
+            <input
+              type='text'
+              placeholder='your email'
+              className='bg-transparent text-white w-[175px]'
+            />
+
+            <button
+              type='submit'
+              className='text-[16px] border-2 border-[#ee00f3] rounded-lg border-y-0 border-r-0 border-collapse h-[30px]'
+            >
+              Subscribe
+            </button>
+          </form>
+
           <Icons width='hundred' src={Logo} />
         </div>
       </div>

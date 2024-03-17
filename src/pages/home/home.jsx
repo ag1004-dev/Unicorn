@@ -48,7 +48,8 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div>
+
+      <div className='fill-window'>
         <section>
           <Navbar />
         </section>
@@ -313,7 +314,7 @@ const Home = () => {
           </span>
         </section>
 
-        <section className='h-screen w-full flex'>
+        <section className='h-screen w-full flex items-start'>
           <div className='w-[40%] scale-110'>
             <div className='w-[200px] flex gap-y-[40px] flex-col'>
               <Heading3 text='Welcome to SOLSEA' />
@@ -367,7 +368,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='w-[60%]'>
+          <div className='w-[60%] scale-110'>
             <div>
               <Heading2 text='FAQ' />
               <img
@@ -388,7 +389,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section>
+        <section className='footer__section'>
           <Footer />
         </section>
       </div>

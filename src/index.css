@@ -14,6 +14,11 @@ section {
   padding: 50px 90px;
 }
 
+section.footer__section {
+  padding-bottom: 0;
+  border-top: 1px solid white;
+}
+
 h1.special,
 h2.special,
 h3.special,
@@ -22,6 +27,11 @@ h5 {
   font-family: 'Mochiy Pop One', sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 43px;
+  background: linear-gradient(315deg, #ee00f3 0%, #a100ff 74%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 a {
@@ -75,6 +85,13 @@ p.two {
   line-height: 20px;
 }
 
+p.special {
+  font-size: 16px !important;
+  font-family: 'Irish Grover', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .specialp > p.two {
   line-height: 40px;
 }
@@ -103,6 +120,19 @@ p.three {
 .rectangle {
   width: 600px;
   height: 450px;
+}
+
+.airdrop {
+  background: url('./assets/images/airdrop.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fill-window {
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
 
 /* Styles for screens with a width greater than 1024px */

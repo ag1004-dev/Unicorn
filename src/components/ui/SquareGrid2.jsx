@@ -16,7 +16,7 @@ const SquareGrid2 = ({ num, data }) => {
             />
 
             <div className='flex'>
-              <span>
+              <span className='!max-w-[150px]'>
                 <span className='flex mb-[5px] w-[180px]'>
                   <Heading3 text={data.heading3} />
 

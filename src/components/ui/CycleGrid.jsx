@@ -5,7 +5,7 @@ import Verified from '../../assets/images/verified.png';
 
 const CycleGrid = ({ num, data }) => {
   return (
-    <div className='w-full flex flex-wrap justify-between gap-y-4 my-6'>
+    <div className='w-full grid grid-flow-row grid-cols-5 gap-y-4 gap-x-2 my-6'>
       {Array(num)
         .fill(0)
         .map((_, i) => (
@@ -23,7 +23,7 @@ const CycleGrid = ({ num, data }) => {
                 className='w-[50px] h-[50px] rounded-full  mr-[10px]'
               />
 
-              <span>
+              <span className='!max-w-[150px]'>
                 <span className='flex mb-[5px] w-[180px]'>
                   <Heading3 text={data.heading3} />
 
