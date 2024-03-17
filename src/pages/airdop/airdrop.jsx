@@ -54,7 +54,7 @@ const AirDrop = () => {
               </div>
             </div>
 
-            <div className='w-[200px] flex items-center justify-around flex-col'>
+            <div className='w-[200px] h-[500px] flex items-center justify-around flex-col'>
               <img src={Line2} alt='Line2' className='h-[125px] mb-[-2px]' />
 
               <div className='!w-[90px] !h-[90px] flex items-center justify-center'>
