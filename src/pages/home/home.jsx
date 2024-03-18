@@ -316,53 +316,52 @@ const Home = () => {
 
         <section className='h-screen w-full flex items-start'>
           <div className='w-[40%] scale-110'>
-            <div className='w-[200px] flex gap-y-[40px] flex-col'>
+            <div className='w-[400px] flex gap-y-[40px] flex-col'>
               <Heading3 text='Welcome to SOLSEA' />
 
               <span className='flex flex-col gap-y-[15px]'>
                 <Heading3 text='Getting Started' />
                 <Link>
-                  <Paragraph type='three' text='How to spot a fake NFT' />
+                  <Paragraph text='How to spot a fake NFT' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Privacy Policy' />
+                  <Paragraph text='Privacy Policy' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Terms and conditions' />
+                  <Paragraph text='Terms and conditions' />
                 </Link>
                 <Heading3 text='FAQ' />
                 <Link>
-                  <Paragraph type='three' text='General' />
+                  <Paragraph text='General' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Features' />
+                  <Paragraph text='Features' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Email Varification' />
+                  <Paragraph text='Email Varification' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='NFTs: None Fungible Tokens' />
+                  <Paragraph text='NFTs: None Fungible Tokens' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Unlockable content' />
+                  <Paragraph text='Unlockable content' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Collections: create and edit' />
+                  <Paragraph text='Collections: create and edit' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Collections Varification' />
+                  <Paragraph text='Collections Varification' />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Pre-Market' />
+                  <Paragraph text='Pre-Market' />
                 </Link>
                 <Link>
                   <Paragraph
-                    type='three'
                     text='Creator Economics (Project Tokens)'
                   />
                 </Link>
                 <Link>
-                  <Paragraph type='three' text='Creator Dashboard' />
+                  <Paragraph text='Creator Dashboard'/>
                 </Link>
               </span>
             </div>
