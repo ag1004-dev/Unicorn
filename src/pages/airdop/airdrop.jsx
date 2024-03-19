@@ -5,12 +5,8 @@ import Icons from "../../components/image layouts/icons";
 import Logo from "../../assets/images/logo.png";
 import { Heading1, Paragraph } from "../../components/ui/texts";
 import Buttons from "../../components/ui/buttons";
-import { Google } from "mdi-material-ui";
-import Twitter from 'mdi-material-ui/Twitter';
-import TwitterLogin from "react-twitter-auth";
 //import {Facebook} from 'mdi-material-ui';
 //import Discord from 'mdi-material-ui/Discord'
-import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import Line2 from "../../assets/images/Line 2.png";
 import TwitterColored from "../../assets/images/twittercolored.png";
 import DiscordColored from "../../assets/images/discordcolored.png";
@@ -29,7 +25,7 @@ import playstore from "../../assets/images/playstore.png";
 import RobortLeft from "../../assets/images/robort-left.png";
 import Vector1 from "../../assets/images/Vector 1.png";
 import Box from '@mui/material/Box'
-import { useAuth } from '../../hooks/useAuth';
+// import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from "react-router";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -60,7 +56,7 @@ const AirDrop = () => {
     setOpen(false);
   };
 
-  const auth = useAuth()
+  // const auth = useAuth()
   useEffect(()=>{
     if (localStorage.getItem('isCustomer') === 'true') {
       setIsSignUp(false)
