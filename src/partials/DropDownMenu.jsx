@@ -6,12 +6,18 @@ import Fade from '@mui/material/Fade';
 import Line1 from '../assets/images/line1.png';
 import Line2 from '../assets/images/line2.png';
 import Line3 from '../assets/images/line3.png';
-
+import { useNavigate } from 'react-router-dom';
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const navigate = useNavigate(); 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+  const handleClickOpen = () => {
+    navigate('/airdrop');
+    setAnchorEl(null);
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -43,7 +49,7 @@ export default function FadeMenu() {
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose}>MarketPlace</MenuItem>
-        <MenuItem onClick={handleClose}>IMU Point Earn System</MenuItem>
+        <MenuItem onClick={handleClickOpen}>IMU Point Earn System</MenuItem>
       </Menu>
     </div>
   );
