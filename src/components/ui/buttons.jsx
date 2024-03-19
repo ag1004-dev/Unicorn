@@ -4,7 +4,7 @@ const Buttons = ({ type, name }) => {
   const navigate = useNavigate();
 
   return (
-    <button className={`${type}`} onClick={() => navigate('/airdrop')}>
+    <button className={`${type}`}>
       {name}
     </button>
   );
