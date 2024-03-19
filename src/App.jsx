@@ -11,6 +11,7 @@ function App() {
         <WalletContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          
           <Route path="/airdrop" element={<AirDrop />} />
         </Routes>
         </WalletContextProvider>
