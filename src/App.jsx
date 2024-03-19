@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, BrowserRouter, Route, Routes } from 'react-router-dom';
 import WalletContextProvider from "./contexts/WalletContextProvider";
 import Home from './pages/home/home';
 import AirDrop from './pages/airdop/airdrop';
@@ -9,7 +9,11 @@ function App() {
   return ( 
     <BrowserRouter>
         <WalletContextProvider>
-          <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          <Route path="/airdrop" element={<AirDrop />} />
+        </Routes>
         </WalletContextProvider>
     </BrowserRouter>
   );
