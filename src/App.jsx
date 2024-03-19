@@ -1,20 +1,18 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom';
+import WalletContextProvider from "./contexts/WalletContextProvider";
 import Home from './pages/home/home';
 import AirDrop from './pages/airdop/airdrop';
+import "@solana/wallet-adapter-react-ui/styles.css";
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/airdrop',
-    element: <AirDrop />,
-  },
-]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return ( 
+    <BrowserRouter>
+        <WalletContextProvider>
+          <Home />
+        </WalletContextProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App;

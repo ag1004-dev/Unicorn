@@ -1,12 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Icons from '../components/image layouts/icons';
 import Buttons from '../components/ui/buttons';
 import Daytime from '../assets/images/daytime.png';
 
 import Logo from '../assets/images/logo.png';
 import FadeMenu from './DropDownMenu';
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 
 const Navbar = () => {
+  const { connection } = useConnection();
+  const { publicKey, connected } = useWallet();
+  const navigate = useNavigate()
+
   return (
     <header className='flex items-center justify-between'>
       <div className='flex items-center justify-between'>
@@ -24,7 +30,7 @@ const Navbar = () => {
 
       <div className='min-w-[250px] flex items-center justify-between'>
 
-        <Buttons type='outlined' name='Connect' />
+        <WalletMultiButton className="wallet-button" />
 
         <FadeMenu />
       </div>
