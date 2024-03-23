@@ -27,6 +27,7 @@ import Vector1 from "../../assets/images/Vector 1.png";
 import Box from '@mui/material/Box'
 // import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from "react-router";
+import TelegramLoginButton from "react-telegram-login";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -40,13 +41,17 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 const AirDrop = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  
+
 
   const [isSignUp, setIsSignUp] = useState(false)
-  const discordLogin = ()=>{
+  const discordLogin = () => {
     const redirectUri = `${window.location.origin}/discordcallback`
     const dPopup = window.open(`https://discord.com/api/oauth2/authorize?client_id=1054765409657688114&redirect_uri=${redirectUri}&response_type=token&scope=identify`, 'discordLogin', 'height=700,width=500')
     window.addEventListener('message', handleMessage, false)
+  };
+
+  const handleTelegramResponse = response => {
+    console.log(response);
   };
 
   const handleClickOpen = () => {
@@ -57,7 +62,7 @@ const AirDrop = () => {
   };
 
   // const auth = useAuth()
-  useEffect(()=>{
+  useEffect(() => {
     if (localStorage.getItem('isCustomer') === 'true') {
       setIsSignUp(false)
     } else {
@@ -67,7 +72,7 @@ const AirDrop = () => {
     if (localStorage.getItem('user-email')) {
       setEmail(localStorage.getItem('user-email'))
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -118,21 +123,21 @@ const AirDrop = () => {
               <img src={Line2} alt="Line2" className="h-[125px] mb-[-2px]" />
 
               <div className="!w-[90px] !h-[90px] flex items-center justify-center">
-              <button onClick={() => navigate("/")}>
-                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={TwitterColored}/>
-                  </button>
+                <button onClick={() => navigate("/")}>
+                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={TwitterColored} />
+                </button>
               </div>
 
               <div className="!w-[90px] !h-[90px] flex items-center justify-center scale-[1.2]">
-                  <button onClick={() => navigate("/")}>
-                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={DiscordColored}/>
-                  </button>
+                <button onClick={() => navigate("/")}>
+                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={DiscordColored} />
+                </button>
               </div>
 
               <div className="!w-[90px] !h-[90px] flex items-center justify-center">
-              <button onClick={() => navigate("/")}>
-                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={TelegramColored}/>
-                  </button>
+                <button onClick={() => navigate("/")}>
+                  <Icons className="bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center" width="50px" src={TelegramColored} />
+                </button>
               </div>
 
               <img
@@ -144,11 +149,7 @@ const AirDrop = () => {
           </div>
         </section>
       </div>
-      <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
+      <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           Sign in
         </DialogTitle>
@@ -165,9 +166,11 @@ const AirDrop = () => {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <Button style={{width:"100%"}} onClick={discordLogin} variant="contained">{isSignUp ? "Sign up with Twitter" :"Sign in with Twitter"} </Button>
-          <Button style={{width:"100%", marginTop:"20px"}}  onClick={discordLogin} color="secondary"  variant="contained">{isSignUp ? "Sign up with Discord" :"Sign in with Discord"}</Button>
-          <Button style={{width:"100%", marginTop:"20px", marginBottom:"20px"}} variant="contained">{isSignUp ? "Sign up with Telegram" :"Sign in with Discord"}</Button>
+          <Button style={{ width: "100%" }} onClick={discordLogin} variant="contained">{isSignUp ? "Sign up with Twitter" : "Sign in with Twitter"}</Button>
+          <Button style={{ width: "100%", marginTop: "20px" }} onClick={discordLogin} color="secondary" variant="contained">{isSignUp ? "Sign up with Discord" : "Sign in with Discord"}</Button>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            <TelegramLoginButton dataOnauth={handleTelegramResponse} botName="UnicornMartIncBot" />
+          </div>
         </DialogContent>
       </BootstrapDialog>
     </React.StrictMode>
